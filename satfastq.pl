@@ -1,6 +1,9 @@
 #!usr/bin/perl
 
-open(FQ,$ARGV[0]) or die "$!";
+#open(FQ,$ARGV[0]) or die "$!";
+foreach my $table(`ls ./5*fq`){
+        #my $table = shift;
+        open(FQ,"<$table") or die "$!";
 
 open OUT,">./out.txt" or die "$!";
 
@@ -60,3 +63,4 @@ while(<FQ>){
 }
 
 print OUT "readsnum = $num\t ";
+}
